@@ -1,5 +1,6 @@
 using System.IO.Compression;
 using Newtonsoft.Json;
+#pragma warning disable CS8618
 
 namespace ModuleLauncher.NET.Models.Resources;
 
@@ -60,12 +61,24 @@ public sealed class MinecraftModEntry
     
     public FileInfo JarFile { get; set; }
 
-    public static MinecraftModEntry Parse(FileInfo jarFile)
+    public static MinecraftModEntry? TryParse(FileInfo jarFile)
     {
-        using var zipFile = new ZipArchive(new FileStream(jarFile.FullName, FileMode.Open), ZipArchiveMode.Read);
-        using StreamReader reader = new(zipFile.GetEntry("mcmod.info").Open());
-        var result = JsonConvert.DeserializeObject<List<MinecraftModEntry>>(reader.ReadToEnd()).First();
-        result.JarFile = jarFile;
-        return result;
+        try
+        {
+            using var zipFile = new ZipArchive(new FileStream(jarFile.FullName, FileMode.Open), ZipArchiveMode.Read);
+            using StreamReader reader = new(zipFile.GetEntry("mcmod.info").Open());
+            var result = JsonConvert.DeserializeObject<List<MinecraftModEntry>>(reader.ReadToEnd()).First();
+            result.JarFile = jarFile;
+            return result;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+
+    public static implicit operator FileInfo(MinecraftModEntry entry)
+    {
+        return entry.JarFile;
     }
 }

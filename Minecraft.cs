@@ -15,11 +15,15 @@ public sealed class Minecraft : MinecraftEntry
 
     public DirectoryInfo VersionRoot => Tree.VersionRoot;
 
-    public List<MinecraftModEntry> Mods
-    {
-        get => Tree.Mods.GetFiles()
+    public List<MinecraftModEntry> Mods =>
+        Tree.Mods.GetFiles()
             .Where(x => string.Compare(x.Extension, ".jar", StringComparison.OrdinalIgnoreCase) == 0 ||
                         string.Compare(x.Extension, ".DISABLED", StringComparison.OrdinalIgnoreCase) == 0)
-            .Select(item => MinecraftModEntry.Parse(item)).ToList();
+            .Select(MinecraftModEntry.TryParse).Where(x => x is not null).ToList()!;
+
+    public Minecraft(MinecraftEntry entry)
+    {
+        this.Json = entry.Json;
+        this.Tree = entry.Tree;
     }
 }
