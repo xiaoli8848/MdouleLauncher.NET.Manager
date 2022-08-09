@@ -5,8 +5,6 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleLauncher.NET.Manager", "ModuleLauncher.NET.Manager.csproj", "{B131F61B-25E5-4C1A-99E0-60001C071648}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleLauncher.NET.ManagerTests", "..\ModuleLauncher.NET.ManagerTests\ModuleLauncher.NET.ManagerTests.csproj", "{55F4A06E-AED4-415E-96CE-B3C53F932918}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{B131F61B-25E5-4C1A-99E0-60001C071648}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B131F61B-25E5-4C1A-99E0-60001C071648}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B131F61B-25E5-4C1A-99E0-60001C071648}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55F4A06E-AED4-415E-96CE-B3C53F932918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55F4A06E-AED4-415E-96CE-B3C53F932918}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55F4A06E-AED4-415E-96CE-B3C53F932918}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55F4A06E-AED4-415E-96CE-B3C53F932918}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
