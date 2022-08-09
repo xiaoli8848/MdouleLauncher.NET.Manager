@@ -11,8 +11,6 @@
         <Description>A set of helper classes for authentication and minecraft management.</Description>
         <PackageIcon>ML-logo.png</PackageIcon>
         <PackageTags>minecraft;minecraft-launcher;launcher;forge;optifine;fabric;minecraft-launcher-library;corss-platform</PackageTags>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
-        <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>
