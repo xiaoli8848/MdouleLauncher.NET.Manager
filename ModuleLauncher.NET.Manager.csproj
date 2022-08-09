@@ -9,7 +9,6 @@
         <Authors>XiaoLi8848</Authors>
         <Product>$(PackageId)</Product>
         <Description>A set of helper classes for authentication and minecraft management.</Description>
-        <PackageIcon>ML-logo.png</PackageIcon>
         <PackageTags>minecraft;minecraft-launcher;launcher;forge;optifine;fabric;minecraft-launcher-library;corss-platform</PackageTags>
     </PropertyGroup>
 
